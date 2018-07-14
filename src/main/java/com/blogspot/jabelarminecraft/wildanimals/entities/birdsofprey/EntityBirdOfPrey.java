@@ -392,7 +392,7 @@ public class EntityBirdOfPrey extends EntityFlying implements IModEntity
             {
                 if (itemInHand.getItem() == Items.dye)
                 {
-                    int i = BlockColored.func_150032_b(itemInHand.getMetadata());
+                    int i = BlockColored.func_150032_b(itemInHand.getItemDamage());
 
                     if (i != getLegBandColor())
                     {
@@ -440,7 +440,7 @@ public class EntityBirdOfPrey extends EntityFlying implements IModEntity
     public boolean isTamingFood(ItemStack parItemStack)
     {
         // check for raw salmon
-        return (parItemStack.getItem() == Items.fish && parItemStack.getMetadata() == 1);
+        return (parItemStack.getItem() == Items.fish && parItemStack.getItemDamage() == 1);
     }
     
     /**

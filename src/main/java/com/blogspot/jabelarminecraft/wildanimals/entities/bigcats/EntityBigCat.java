@@ -505,7 +505,7 @@ public class EntityBigCat extends EntityTameable implements IModEntity
                             --itemInHand.stackSize;
                         }
 
-                        heal(itemfood.getHealAmount(itemInHand));
+                        heal(itemfood.func_150905_g(itemInHand));
 
                         if (itemInHand.stackSize <= 0)
                         {
@@ -517,7 +517,7 @@ public class EntityBigCat extends EntityTameable implements IModEntity
                 }
                 else if (itemInHand.getItem() == Items.dye)
                 {
-                    int i = BlockColored.func_150032_b(itemInHand.getMetadata());
+                    int i = BlockColored.func_150032_b(itemInHand.getItemDamage());
 
                     if (i != getCollarColor())
                     {
@@ -674,7 +674,7 @@ public class EntityBigCat extends EntityTameable implements IModEntity
     public EntityLivingBase getOwner()
     {
         UUID uuid = new UUID(syncDataCompound.getLong("ownerUUIDMSB"), syncDataCompound.getLong("ownerUUIDLSB"));
-        return worldObj.getPlayerEntityByUUID(uuid); 
+        return worldObj.func_152378_a(uuid);
     }
 
     @Override

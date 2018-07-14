@@ -344,7 +344,7 @@ public class Utilities
                 existingBlock.onBlockPreDestroy(parChunk.worldObj, worldPosX, parY, worldPosZ, existingMetaData);
             }
 
-            extendedblockstorage.setExtBlockID(parX, parY & 15, parZ, parBlock);
+            extendedblockstorage.func_150818_a(parX, parY & 15, parZ, parBlock);
             extendedblockstorage.setExtBlockMetadata(parX, parY & 15, parZ, parMetaData); // This line duplicates the one below, so breakBlock fires with valid worldstate
 
             if (!parChunk.worldObj.isRemote)
@@ -383,7 +383,7 @@ public class Utilities
 
                 if (parBlock.hasTileEntity(parMetaData))
                 {
-                    tileentity = parChunk.getBlockTileEntityInChunk(parX, parY, parZ);
+                    tileentity = parChunk.func_150806_e(parX, parY, parZ);
 
                     if (tileentity != null)
                     {
